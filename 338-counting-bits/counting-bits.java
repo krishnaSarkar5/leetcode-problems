@@ -28,3 +28,35 @@ class Solution {
 
     }
 }
+
+
+
+// class Solution {
+//     public int[] countBits(int n) {
+//         int ans[]=new int[n+1];
+//         for(int i=1;i<=n;i++){
+//             ans[i]=ans[i/2]+i%2;
+//         }
+//         return ans;
+//     }
+// }
+
+
+
+// class Solution {
+//     public int[] countBits(int n) {
+//         int arr[]=new int[n+1];
+//         helper(arr,1,1);
+//         return arr;
+//     }
+
+//     void helper(int arr[],int bits,int count)
+//     {
+//         if(count>=arr.length)
+//         return;
+//         arr[count]=bits;
+//         count<<=1;
+//         helper(arr,bits,count);
+//         helper(arr,++bits,++count);
+//     }
+// }
