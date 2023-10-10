@@ -6,11 +6,6 @@ class Solution {
 
         while (s <= e) {
 
-            // if(x==0 || x==1) return x;
-
-            // if (s == e)
-            //     return ans;
-
             long m = s + (e - s) / 2;
 
             if (m * m == x) {
