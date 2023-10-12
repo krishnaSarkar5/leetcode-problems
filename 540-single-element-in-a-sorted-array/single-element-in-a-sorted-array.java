@@ -1,6 +1,5 @@
 class Solution {
     public int singleNonDuplicate(int[] nums) {
-        
         int n = nums.length;
 
         int s = 0, e = n - 1;
@@ -30,7 +29,5 @@ class Solution {
         }
 
         return -1;
-
-
     }
 }
