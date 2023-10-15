@@ -19,7 +19,7 @@ class Solution {
 
         // return ans;
 
-        int n = nums.length;
+         int n = nums.length;
 
         int[] temp = new int[101];
         int[] ans = new int[n];
@@ -39,7 +39,6 @@ class Solution {
         }
 
         return ans;
-
         
     }
 }
