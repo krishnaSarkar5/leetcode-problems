@@ -14,21 +14,41 @@ class Solution {
         ListNode prev = null;
         ListNode curr = head;
 
-        if(head==null){
-            return null;
-        }
+        // if(head==null){
+        //     return null;
+        // }
 
-        if(curr.next==null){
-            return head;
-        }
+        // if(curr.next==null){
+        //     return head;
+        // }
 
-        while(curr!=null){
-            ListNode temp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr=temp;
-        }
-        head=prev;
+        // while(curr!=null){
+        //     ListNode temp = curr.next;
+        //     curr.next = prev;
+        //     prev = curr;
+        //     curr=temp;
+        // }
+        // head=prev;
+
+
+
+       head= reverse(prev,curr);
+
         return head;
+    }
+
+    private ListNode reverse(ListNode prev,ListNode curr){
+       
+       if(curr==null)
+            return prev;
+
+        ListNode temp = curr.next;
+
+        curr.next=prev;
+        prev=curr;
+        curr=temp;
+        ListNode head = reverse(prev,curr);
+        return head;
+
     }
 }
