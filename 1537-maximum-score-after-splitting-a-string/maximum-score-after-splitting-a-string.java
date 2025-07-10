@@ -1,36 +1,28 @@
 class Solution {
     public int maxScore(String s) {
 
-        if(s.length()==2){
-            if(s.charAt(0)==s.charAt(1))
-             return 1;
-            if(s.charAt(0)=='0')
-             return 2;
+        int totalOnes = 0 ;
 
-             return 0;
+        for(char c : s.toCharArray()){
+            if(c=='1')
+                totalOnes++;
         }
 
-        int[] z = new int[s.length()];
-        int[] o = new int[s.length()];
+        int totalZeros = 0;
+        int currScore = 0;
+        int maxScore = 0;
 
-        int sz = 0;
-        int so = 0;
-        for(int i=0;i<s.length();i++){
+        for(int i=0;i<s.length()-1;i++){
             if(s.charAt(i)=='0'){
-                sz++;
+                totalZeros++;
+            }else{
+                totalOnes--;
             }
-             if(s.charAt(s.length()-1-i)=='1'){
-                so++;
-            }
-            z[i]=sz;
-            o[s.length()-1-i]=so;
+    
+            maxScore = Math.max(maxScore,totalZeros+totalOnes);
 
         }
-            int res =  0;
-         for(int i=1;i<s.length()-1;i++){
-            res =  Math.max(res,z[i]+o[i]);
 
-        }
-        return res;
+       return maxScore;
     }
 }
