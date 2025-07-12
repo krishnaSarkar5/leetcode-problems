@@ -5,16 +5,16 @@ class Solution {
         Arrays.sort(nums);
 
         int[] res = new int[queries.length];
-        int[] arr = new int[nums.length];
+        
 
-        arr[0] = nums[0];
+       
 
         for(int i=1;i<nums.length;i++){
-            arr[i] = arr[i-1] + nums[i];
+            nums[i] += nums[i-1] ;
         }
 
         for(int i=0;i<queries.length;i++){
-           res[i] = upperBound(arr,queries[i]);
+           res[i] = upperBound(nums,queries[i]);
         }
         return res;
     }
